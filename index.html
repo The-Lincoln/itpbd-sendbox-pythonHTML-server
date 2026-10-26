@@ -3,11 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>Lincoln — Desk Studio</title>
+    <meta
+      name="description"
+      content="A virtual content creator. Lincoln writes a take, speaks it, and records the portrait to video."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,460;9..144,620&family=Outfit:wght@340;460;560&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a simple HTML + CSS template!</h1>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="mast">
+      <div class="brand">
+        <span class="mark">LS</span>
+        <div>
+          <p class="eyebrow">Desk studio</p>
+          <strong>Lincoln</strong>
+        </div>
+      </div>
+      <p class="mast-note">Voice on the take. Portrait in the frame. One file when you cut.</p>
+    </header>
+
+    <main class="stage-wrap">
+      <section class="stage" aria-label="Lincoln on camera">
+        <div class="monitor" id="monitor">
+          <canvas id="stage" width="720" height="900"></canvas>
+          <div class="rec-pip" id="recPip" hidden>
+            <span></span>
+            REC
+          </div>
+          <div class="vu" id="vu" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p class="slate" id="slate">standby</p>
+        </div>
+        <div class="transport">
+          <button type="button" class="play" id="speakBtn">Speak the take</button>
+          <button type="button" class="ghost" id="recordBtn">Record video</button>
+          <button type="button" class="ghost" id="stopBtn" disabled>Stop</button>
+          <a class="ghost download" id="downloadLink" hidden download="lincoln-take.webm">Save take</a>
+        </div>
+        <p class="status" id="status" role="status">Portrait loaded. Write a line, then put him on mic.</p>
+      </section>
+
+      <aside class="desk">
+        <form id="brief">
+          <fieldset>
+            <legend>Scene</legend>
+            <div class="scenes" role="radiogroup" aria-label="Scene">
+              <label class="scene">
+                <input type="radio" name="scene" value="intro" checked />
+                <span>Channel open</span>
+                <small>Warm, facing camera</small>
+              </label>
+              <label class="scene">
+                <input type="radio" name="scene" value="desk" />
+                <span>Desk note</span>
+                <small>Eyes on the page</small>
+              </label>
+              <label class="scene">
+                <input type="radio" name="scene" value="night" />
+                <span>Night take</span>
+                <small>Lower light, slower</small>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field" for="topic">What should this take be about?</label>
+          <textarea
+            id="topic"
+            name="topic"
+            rows="3"
+            maxlength="180"
+            placeholder="Leave blank for the house script, or name a topic — a film you finished, a habit, a place."
+          ></textarea>
+
+          <div class="row">
+            <button type="submit" class="ink" id="writeBtn">Write the line</button>
+            <label class="voice-pick" for="voice">
+              Voice
+              <select id="voice"></select>
+            </label>
+          </div>
+        </form>
+
+        <article class="script-card" id="scriptCard">
+          <header>
+            <p class="eyebrow" id="scriptMood">warm</p>
+            <h1 id="scriptTitle">Channel open</h1>
+          </header>
+          <p id="scriptBody">
+            Hey, I am Lincoln. I make short films about people who stay curious after the easy answers run out. If you are new here, pull up a chair. We talk like the camera is a friend, not a stage.
+          </p>
+          <ol class="beats" id="beats">
+            <li>look left</li>
+            <li>smile</li>
+            <li>look camera</li>
+          </ol>
+        </article>
+
+        <section class="takes" aria-label="Saved takes">
+          <h2>On the shelf</h2>
+          <ul id="takes">
+            <li class="empty">Recorded takes land here. They stay in this browser.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
   </body>
 </html>

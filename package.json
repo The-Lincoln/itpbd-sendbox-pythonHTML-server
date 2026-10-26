@@ -1,17 +1,11 @@
 {
-  "name": "html-css",
+  "name": "lincoln-studio",
   "version": "1.0.0",
-  "description": "A template for HTML and CSS",
-  "main": "index.html",
+  "private": true,
+  "description": "Virtual content creator studio for Lincoln — voice, talking portrait, and take recording.",
   "scripts": {
     "start": "serve"
   },
-  "keywords": [
-    "html",
-    "css"
-  ],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
   "devDependencies": {
     "serve": "11.2.0"
   }
