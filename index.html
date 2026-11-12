@@ -3,11 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <meta name="description" content="ITPBD — a sandbox for building, testing and shipping web ideas." />
+    <title>ITPBD — Sandbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>This is a simple HTML + CSS template!</h1>
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="ITPBD home">
+        <span class="brand-mark">▚</span> ITPBD
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow mono">// sandbox v1.0 — online</p>
+        <h1>Build fast.<br /><span class="accent">Break things</span> safely.</h1>
+        <p class="lede">
+          ITPBD is a sandbox for prototyping web ideas — a place to sketch, test and ship
+          small experiments without ceremony.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#features">Explore features</a>
+          <a class="btn btn-ghost" href="#process">How it works →</a>
+        </div>
+
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar"><span></span><span></span><span></span><em>~/itpbd</em></div>
+          <pre class="mono"><code><span class="dim">$</span> python -m http.server 8000
+<span class="dim">Serving HTTP on 0.0.0.0 port 8000 ...</span>
+<span class="dim">$</span> git push origin main
+<span class="ok">✔ Deployed to itpbd.netlify.app</span><span class="cursor">▋</span></code></pre>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <h2><span class="num mono">01</span> About</h2>
+        <div class="about-grid">
+          <p>
+            This project started as a simple HTML + CSS template and a local Python server.
+            It's now a live, globally distributed static site — every push to
+            <code>main</code> goes straight to production.
+          </p>
+          <ul class="stats">
+            <li><strong>0</strong><span>build steps</span></li>
+            <li><strong>&lt;1s</strong><span>load time</span></li>
+            <li><strong>100%</strong><span>static</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <h2><span class="num mono">02</span> Features</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Instant preview</h3>
+            <p>Edit HTML and CSS, refresh, done. No bundlers, no config, no waiting.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌍</div>
+            <h3>Global edge</h3>
+            <p>Served from a worldwide CDN so pages load quickly wherever visitors are.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🔒</div>
+            <h3>HTTPS by default</h3>
+            <p>Secure connections out of the box, with certificates handled automatically.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧪</div>
+            <h3>Safe experiments</h3>
+            <p>Branches get their own preview URLs, so ideas can be tested before they go live.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <h2><span class="num mono">03</span> Process</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-n mono">01</span>
+            <div><h3>Sketch</h3><p>Write plain HTML and CSS in the repository.</p></div>
+          </li>
+          <li>
+            <span class="step-n mono">02</span>
+            <div><h3>Test</h3><p>Run a local server and check it in the browser.</p></div>
+          </li>
+          <li>
+            <span class="step-n mono">03</span>
+            <div><h3>Ship</h3><p>Push to GitHub — the site deploys automatically.</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Have an idea worth prototyping?</h2>
+        <p>Open an issue or start a branch on GitHub and let's build it.</p>
+        <a
+          class="btn btn-primary"
+          href="https://github.com/The-Lincoln/itpbd-sendbox-pythonHTML-server"
+          target="_blank"
+          rel="noopener"
+          >View on GitHub</a
+        >
+      </section>
+    </main>
+
+    <footer class="footer mono">
+      <span>© <span id="year">2026</span> ITPBD</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
